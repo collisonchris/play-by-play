@@ -4,4 +4,5 @@ class RunPlay {
     Player ballCarrier;
     RunConcepts runConcept;
     int gain;
+    Location locaton;
 }
