@@ -1,0 +1,62 @@
+
+<div class="page-header">
+	<h1>Edit Play</h1>
+</div>
+<alert level="{{message.level}}" text="{{message.text}}"/>
+<form name="form" data-ng-submit="update(item)" class="form-horizontal">
+	<input type="hidden" data-ng-model="item.id">
+	<input type="hidden" data-ng-model="item.version">
+
+	<div class="control-group" data-ng-class="{error: errors.down}">
+		<label class="control-label" for="down">Down</label>
+		<div class="controls">
+			<input type="text" id="down" name="down" required data-ng-model="item.down">
+			<span class="help-inline" data-ng-show="errors.down">{{errors.down}}</span>
+		</div>
+	</div>
+	
+	<div class="control-group" data-ng-class="{error: errors.driveNumber}">
+		<label class="control-label" for="driveNumber">Drive Number</label>
+		<div class="controls">
+			<input type="text" id="driveNumber" name="driveNumber" required data-ng-model="item.driveNumber">
+			<span class="help-inline" data-ng-show="errors.driveNumber">{{errors.driveNumber}}</span>
+		</div>
+	</div>
+	
+	<div class="control-group" data-ng-class="{error: errors.notes}">
+		<label class="control-label" for="notes">Notes</label>
+		<div class="controls">
+			<input type="text" id="notes" name="notes" required data-ng-model="item.notes">
+			<span class="help-inline" data-ng-show="errors.notes">{{errors.notes}}</span>
+		</div>
+	</div>
+	
+	<div class="control-group" data-ng-class="{error: errors.playNumber}">
+		<label class="control-label" for="playNumber">Play Number</label>
+		<div class="controls">
+			<input type="text" id="playNumber" name="playNumber" required data-ng-model="item.playNumber">
+			<span class="help-inline" data-ng-show="errors.playNumber">{{errors.playNumber}}</span>
+		</div>
+	</div>
+	
+	<div class="control-group" data-ng-class="{error: errors.startingYardLine}">
+		<label class="control-label" for="startingYardLine">Starting Yard Line</label>
+		<div class="controls">
+			<input type="text" id="startingYardLine" name="startingYardLine" required data-ng-model="item.startingYardLine">
+			<span class="help-inline" data-ng-show="errors.startingYardLine">{{errors.startingYardLine}}</span>
+		</div>
+	</div>
+	
+	<div class="control-group" data-ng-class="{error: errors.yardsToGo}">
+		<label class="control-label" for="yardsToGo">Yards To Go</label>
+		<div class="controls">
+			<input type="text" id="yardsToGo" name="yardsToGo" required data-ng-model="item.yardsToGo">
+			<span class="help-inline" data-ng-show="errors.yardsToGo">{{errors.yardsToGo}}</span>
+		</div>
+	</div>
+	
+	<div class="form-actions">
+		<button type="submit" class="btn btn-primary" data-ng-disabled="form.$invalid"><i class="icon-ok"></i> Update</button>
+		<button type="button" class="btn btn-danger" data-ng-click="delete(item)"><i class="icon-trash"></i> Delete</button>
+	</div>
+</form>

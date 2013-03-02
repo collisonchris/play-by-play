@@ -1,0 +1,11 @@
+# Grails
+target
+*.log
+/*.zip
+/plugin.xml
+*.db
+
+#Eclipse
+.project
+.classpath
+target-eclipse

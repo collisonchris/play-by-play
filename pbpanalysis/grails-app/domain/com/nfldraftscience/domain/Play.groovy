@@ -7,5 +7,7 @@ class Play {
     int driveNumber;
     int playNumber;
     String notes;
+    boolean isPass;
+    boolean isRun;
     
 }
