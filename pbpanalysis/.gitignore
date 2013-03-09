@@ -1,5 +1,5 @@
 # Grails
-target
+target/
 *.log
 /*.zip
 /plugin.xml
@@ -8,4 +8,4 @@ target
 #Eclipse
 .project
 .classpath
-target-eclipse
+target-eclipse/
