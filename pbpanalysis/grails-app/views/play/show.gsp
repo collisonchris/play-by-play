@@ -49,24 +49,10 @@
 						
 					</g:if>
 				
-					<g:if test="${playInstance?.driveNumber}">
-						<dt><g:message code="play.driveNumber.label" default="Drive Number" /></dt>
+					<g:if test="${playInstance?.drive}">
+						<dt><g:message code="play.drive.label" default="Drive" /></dt>
 						
-							<dd><g:fieldValue bean="${playInstance}" field="driveNumber"/></dd>
-						
-					</g:if>
-				
-					<g:if test="${playInstance?.isPass}">
-						<dt><g:message code="play.isPass.label" default="Is Pass" /></dt>
-						
-							<dd><g:formatBoolean boolean="${playInstance?.isPass}" /></dd>
-						
-					</g:if>
-				
-					<g:if test="${playInstance?.isRun}">
-						<dt><g:message code="play.isRun.label" default="Is Run" /></dt>
-						
-							<dd><g:formatBoolean boolean="${playInstance?.isRun}" /></dd>
+							<dd><g:link controller="drive" action="show" id="${playInstance?.drive?.id}">${playInstance?.drive?.encodeAsHTML()}</g:link></dd>
 						
 					</g:if>
 				
@@ -84,10 +70,10 @@
 						
 					</g:if>
 				
-					<g:if test="${playInstance?.startingYardLine}">
-						<dt><g:message code="play.startingYardLine.label" default="Starting Yard Line" /></dt>
+					<g:if test="${playInstance?.yardsGained}">
+						<dt><g:message code="play.yardsGained.label" default="Yards Gained" /></dt>
 						
-							<dd><g:fieldValue bean="${playInstance}" field="startingYardLine"/></dd>
+							<dd><g:fieldValue bean="${playInstance}" field="yardsGained"/></dd>
 						
 					</g:if>
 				

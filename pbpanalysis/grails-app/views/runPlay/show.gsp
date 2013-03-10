@@ -42,10 +42,17 @@
 
 				<dl>
 				
-					<g:if test="${runPlayInstance?.ballCarrier}">
-						<dt><g:message code="runPlay.ballCarrier.label" default="Ball Carrier" /></dt>
+					<g:if test="${runPlayInstance?.YAC}">
+						<dt><g:message code="runPlay.YAC.label" default="YAC" /></dt>
 						
-							<dd><g:link controller="player" action="show" id="${runPlayInstance?.ballCarrier?.id}">${runPlayInstance?.ballCarrier?.encodeAsHTML()}</g:link></dd>
+							<dd><g:fieldValue bean="${runPlayInstance}" field="YAC"/></dd>
+						
+					</g:if>
+				
+					<g:if test="${runPlayInstance?.ballcarrier}">
+						<dt><g:message code="runPlay.ballcarrier.label" default="Ballcarrier" /></dt>
+						
+							<dd><g:link controller="player" action="show" id="${runPlayInstance?.ballcarrier?.id}">${runPlayInstance?.ballcarrier?.encodeAsHTML()}</g:link></dd>
 						
 					</g:if>
 				
@@ -56,17 +63,10 @@
 						
 					</g:if>
 				
-					<g:if test="${runPlayInstance?.driveNumber}">
-						<dt><g:message code="runPlay.driveNumber.label" default="Drive Number" /></dt>
+					<g:if test="${runPlayInstance?.drive}">
+						<dt><g:message code="runPlay.drive.label" default="Drive" /></dt>
 						
-							<dd><g:fieldValue bean="${runPlayInstance}" field="driveNumber"/></dd>
-						
-					</g:if>
-				
-					<g:if test="${runPlayInstance?.gain}">
-						<dt><g:message code="runPlay.gain.label" default="Gain" /></dt>
-						
-							<dd><g:fieldValue bean="${runPlayInstance}" field="gain"/></dd>
+							<dd><g:link controller="drive" action="show" id="${runPlayInstance?.drive?.id}">${runPlayInstance?.drive?.encodeAsHTML()}</g:link></dd>
 						
 					</g:if>
 				
@@ -98,10 +98,10 @@
 						
 					</g:if>
 				
-					<g:if test="${runPlayInstance?.startingYardLine}">
-						<dt><g:message code="runPlay.startingYardLine.label" default="Starting Yard Line" /></dt>
+					<g:if test="${runPlayInstance?.yardsGained}">
+						<dt><g:message code="runPlay.yardsGained.label" default="Yards Gained" /></dt>
 						
-							<dd><g:fieldValue bean="${runPlayInstance}" field="startingYardLine"/></dd>
+							<dd><g:fieldValue bean="${runPlayInstance}" field="yardsGained"/></dd>
 						
 					</g:if>
 				

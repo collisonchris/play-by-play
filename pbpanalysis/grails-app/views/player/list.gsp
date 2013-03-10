@@ -46,11 +46,15 @@
 						
 							<g:sortableColumn property="firstName" title="${message(code: 'player.firstName.label', default: 'First Name')}" />
 						
+							<g:sortableColumn property="height" title="${message(code: 'player.height.label', default: 'Height')}" />
+						
 							<g:sortableColumn property="lastName" title="${message(code: 'player.lastName.label', default: 'Last Name')}" />
 						
 							<g:sortableColumn property="number" title="${message(code: 'player.number.label', default: 'Number')}" />
 						
 							<g:sortableColumn property="pos" title="${message(code: 'player.pos.label', default: 'Pos')}" />
+						
+							<g:sortableColumn property="weight" title="${message(code: 'player.weight.label', default: 'Weight')}" />
 						
 							<th></th>
 						</tr>
@@ -61,11 +65,15 @@
 						
 							<td>${fieldValue(bean: playerInstance, field: "firstName")}</td>
 						
+							<td>${fieldValue(bean: playerInstance, field: "height")}</td>
+						
 							<td>${fieldValue(bean: playerInstance, field: "lastName")}</td>
 						
 							<td>${fieldValue(bean: playerInstance, field: "number")}</td>
 						
 							<td>${fieldValue(bean: playerInstance, field: "pos")}</td>
+						
+							<td>${fieldValue(bean: playerInstance, field: "weight")}</td>
 						
 							<td class="link">
 								<g:link action="show" id="${playerInstance.id}" class="btn btn-small">Show &raquo;</g:link>

@@ -52,7 +52,7 @@ grails.project.dependency.resolution = {
         build ":tomcat:$grailsVersion"
 
         runtime ":database-migration:1.1"
-        runtime ":fields:1.0.1"
+        runtime ":fields:1.3"
 
         compile ':cache:1.0.0'
         compile(":twitter-bootstrap:2.1.1") { excludes 'svn' }

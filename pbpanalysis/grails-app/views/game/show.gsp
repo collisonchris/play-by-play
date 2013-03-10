@@ -1,10 +1,10 @@
 
-<%@ page import="com.nfldraftscience.domain.Player" %>
+<%@ page import="com.nfldraftscience.domain.Game" %>
 <!doctype html>
 <html>
 	<head>
 		<meta name="layout" content="bootstrap">
-		<g:set var="entityName" value="${message(code: 'player.label', default: 'Player')}" />
+		<g:set var="entityName" value="${message(code: 'game.label', default: 'Game')}" />
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
@@ -42,54 +42,35 @@
 
 				<dl>
 				
-					<g:if test="${playerInstance?.firstName}">
-						<dt><g:message code="player.firstName.label" default="First Name" /></dt>
+					<g:if test="${gameInstance?.date}">
+						<dt><g:message code="game.date.label" default="Date" /></dt>
 						
-							<dd><g:fieldValue bean="${playerInstance}" field="firstName"/></dd>
-						
-					</g:if>
-				
-					<g:if test="${playerInstance?.height}">
-						<dt><g:message code="player.height.label" default="Height" /></dt>
-						
-							<dd><g:fieldValue bean="${playerInstance}" field="height"/></dd>
+							<dd><g:formatDate date="${gameInstance?.date}" /></dd>
 						
 					</g:if>
 				
-					<g:if test="${playerInstance?.lastName}">
-						<dt><g:message code="player.lastName.label" default="Last Name" /></dt>
+					<g:if test="${gameInstance?.drives}">
+						<dt><g:message code="game.drives.label" default="Drives" /></dt>
 						
-							<dd><g:fieldValue bean="${playerInstance}" field="lastName"/></dd>
-						
-					</g:if>
-				
-					<g:if test="${playerInstance?.number}">
-						<dt><g:message code="player.number.label" default="Number" /></dt>
-						
-							<dd><g:fieldValue bean="${playerInstance}" field="number"/></dd>
+							<g:each in="${gameInstance.drives}" var="d">
+							<dd><g:link controller="drive" action="show" id="${d.id}">${d?.encodeAsHTML()}</g:link></dd>
+							</g:each>
 						
 					</g:if>
 				
-					<g:if test="${playerInstance?.pos}">
-						<dt><g:message code="player.pos.label" default="Pos" /></dt>
+					<g:if test="${gameInstance?.opponent}">
+						<dt><g:message code="game.opponent.label" default="Opponent" /></dt>
 						
-							<dd><g:fieldValue bean="${playerInstance}" field="pos"/></dd>
-						
-					</g:if>
-				
-					<g:if test="${playerInstance?.weight}">
-						<dt><g:message code="player.weight.label" default="Weight" /></dt>
-						
-							<dd><g:fieldValue bean="${playerInstance}" field="weight"/></dd>
+							<dd><g:fieldValue bean="${gameInstance}" field="opponent"/></dd>
 						
 					</g:if>
 				
 				</dl>
 
 				<g:form>
-					<g:hiddenField name="id" value="${playerInstance?.id}" />
+					<g:hiddenField name="id" value="${gameInstance?.id}" />
 					<div class="form-actions">
-						<g:link class="btn" action="edit" id="${playerInstance?.id}">
+						<g:link class="btn" action="edit" id="${gameInstance?.id}">
 							<i class="icon-pencil"></i>
 							<g:message code="default.button.edit.label" default="Edit" />
 						</g:link>

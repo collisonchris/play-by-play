@@ -1,8 +1,8 @@
 package com.nfldraftscience.domain
 
 class RunPlay extends Play {
-    Player ballCarrier;
+    Player ballcarrier
     RunConcepts runConcept;
-    int gain;
+    int YAC;
     Location locaton;
 }

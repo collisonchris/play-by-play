@@ -38,7 +38,7 @@
 						<span class="icon-bar"></span>
 					</a>
 
-					<a class="brand" href="${createLink(uri: '/')}">Grails Twitter Bootstrap</a>
+					<a class="brand" href="${createLink(uri: '/')}">Play-by-Play Analysis</a>
 
 					<div class="nav-collapse">
 						<ul class="nav">							
@@ -58,7 +58,7 @@
 			<hr>
 
 			<footer>
-				<p>&copy; Company 2011</p>
+				<p>&copy; Football Science 2013</p>
 			</footer>
 		</div>
 

@@ -2,12 +2,20 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: runPlayInstance, field: 'ballCarrier', 'error')} required">
-	<label for="ballCarrier">
-		<g:message code="runPlay.ballCarrier.label" default="Ball Carrier" />
+<div class="fieldcontain ${hasErrors(bean: runPlayInstance, field: 'YAC', 'error')} required">
+	<label for="YAC">
+		<g:message code="runPlay.YAC.label" default="YAC" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="ballCarrier" name="ballCarrier.id" from="${com.nfldraftscience.domain.Player.list()}" optionKey="id" required="" value="${runPlayInstance?.ballCarrier?.id}" class="many-to-one"/>
+	<g:field name="YAC" type="number" value="${runPlayInstance.YAC}" required=""/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: runPlayInstance, field: 'ballcarrier', 'error')} required">
+	<label for="ballcarrier">
+		<g:message code="runPlay.ballcarrier.label" default="Ballcarrier" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:select id="ballcarrier" name="ballcarrier.id" from="${com.nfldraftscience.domain.Player.list()}" optionKey="id" required="" value="${runPlayInstance?.ballcarrier?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: runPlayInstance, field: 'down', 'error')} ">
@@ -18,20 +26,12 @@
 	<g:textField name="down" value="${runPlayInstance?.down}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: runPlayInstance, field: 'driveNumber', 'error')} required">
-	<label for="driveNumber">
-		<g:message code="runPlay.driveNumber.label" default="Drive Number" />
+<div class="fieldcontain ${hasErrors(bean: runPlayInstance, field: 'drive', 'error')} required">
+	<label for="drive">
+		<g:message code="runPlay.drive.label" default="Drive" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="driveNumber" type="number" value="${runPlayInstance.driveNumber}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: runPlayInstance, field: 'gain', 'error')} required">
-	<label for="gain">
-		<g:message code="runPlay.gain.label" default="Gain" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field name="gain" type="number" value="${runPlayInstance.gain}" required=""/>
+	<g:select id="drive" name="drive.id" from="${com.nfldraftscience.domain.Drive.list()}" optionKey="id" required="" value="${runPlayInstance?.drive?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: runPlayInstance, field: 'locaton', 'error')} required">
@@ -66,12 +66,12 @@
 	<g:select name="runConcept" from="${com.nfldraftscience.domain.RunConcepts?.values()}" keys="${com.nfldraftscience.domain.RunConcepts.values()*.name()}" required="" value="${runPlayInstance?.runConcept?.name()}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: runPlayInstance, field: 'startingYardLine', 'error')} ">
-	<label for="startingYardLine">
-		<g:message code="runPlay.startingYardLine.label" default="Starting Yard Line" />
-		
+<div class="fieldcontain ${hasErrors(bean: runPlayInstance, field: 'yardsGained', 'error')} required">
+	<label for="yardsGained">
+		<g:message code="runPlay.yardsGained.label" default="Yards Gained" />
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="startingYardLine" value="${runPlayInstance?.startingYardLine}"/>
+	<g:field name="yardsGained" type="number" value="${runPlayInstance.yardsGained}" required=""/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: runPlayInstance, field: 'yardsToGo', 'error')} ">

@@ -1,13 +1,12 @@
 package com.nfldraftscience.domain
 
 class Play {
-    String startingYardLine;
+    static belongsTo = [drive: Drive]
+    
     String down;
     String yardsToGo;
-    int driveNumber;
     int playNumber;
+    int yardsGained;
     String notes;
-    boolean isPass;
-    boolean isRun;
     
 }

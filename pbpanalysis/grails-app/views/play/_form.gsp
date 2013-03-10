@@ -10,28 +10,12 @@
 	<g:textField name="down" value="${playInstance?.down}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: playInstance, field: 'driveNumber', 'error')} required">
-	<label for="driveNumber">
-		<g:message code="play.driveNumber.label" default="Drive Number" />
+<div class="fieldcontain ${hasErrors(bean: playInstance, field: 'drive', 'error')} required">
+	<label for="drive">
+		<g:message code="play.drive.label" default="Drive" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="driveNumber" type="number" value="${playInstance.driveNumber}" required=""/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: playInstance, field: 'isPass', 'error')} ">
-	<label for="isPass">
-		<g:message code="play.isPass.label" default="Is Pass" />
-		
-	</label>
-	<g:checkBox name="isPass" value="${playInstance?.isPass}" />
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: playInstance, field: 'isRun', 'error')} ">
-	<label for="isRun">
-		<g:message code="play.isRun.label" default="Is Run" />
-		
-	</label>
-	<g:checkBox name="isRun" value="${playInstance?.isRun}" />
+	<g:select id="drive" name="drive.id" from="${com.nfldraftscience.domain.Drive.list()}" optionKey="id" required="" value="${playInstance?.drive?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: playInstance, field: 'notes', 'error')} ">
@@ -50,12 +34,12 @@
 	<g:field name="playNumber" type="number" value="${playInstance.playNumber}" required=""/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: playInstance, field: 'startingYardLine', 'error')} ">
-	<label for="startingYardLine">
-		<g:message code="play.startingYardLine.label" default="Starting Yard Line" />
-		
+<div class="fieldcontain ${hasErrors(bean: playInstance, field: 'yardsGained', 'error')} required">
+	<label for="yardsGained">
+		<g:message code="play.yardsGained.label" default="Yards Gained" />
+		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="startingYardLine" value="${playInstance?.startingYardLine}"/>
+	<g:field name="yardsGained" type="number" value="${playInstance.yardsGained}" required=""/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: playInstance, field: 'yardsToGo', 'error')} ">

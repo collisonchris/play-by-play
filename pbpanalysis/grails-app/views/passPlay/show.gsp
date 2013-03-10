@@ -49,10 +49,10 @@
 						
 					</g:if>
 				
-					<g:if test="${passPlayInstance?.driveNumber}">
-						<dt><g:message code="passPlay.driveNumber.label" default="Drive Number" /></dt>
+					<g:if test="${passPlayInstance?.drive}">
+						<dt><g:message code="passPlay.drive.label" default="Drive" /></dt>
 						
-							<dd><g:fieldValue bean="${passPlayInstance}" field="driveNumber"/></dd>
+							<dd><g:link controller="drive" action="show" id="${passPlayInstance?.drive?.id}">${passPlayInstance?.drive?.encodeAsHTML()}</g:link></dd>
 						
 					</g:if>
 				
@@ -91,13 +91,6 @@
 						
 					</g:if>
 				
-					<g:if test="${passPlayInstance?.startingYardLine}">
-						<dt><g:message code="passPlay.startingYardLine.label" default="Starting Yard Line" /></dt>
-						
-							<dd><g:fieldValue bean="${passPlayInstance}" field="startingYardLine"/></dd>
-						
-					</g:if>
-				
 					<g:if test="${passPlayInstance?.target}">
 						<dt><g:message code="passPlay.target.label" default="Target" /></dt>
 						
@@ -105,10 +98,10 @@
 						
 					</g:if>
 				
-					<g:if test="${passPlayInstance?.yardsGain}">
-						<dt><g:message code="passPlay.yardsGain.label" default="Yards Gain" /></dt>
+					<g:if test="${passPlayInstance?.yardsGained}">
+						<dt><g:message code="passPlay.yardsGained.label" default="Yards Gained" /></dt>
 						
-							<dd><g:fieldValue bean="${passPlayInstance}" field="yardsGain"/></dd>
+							<dd><g:fieldValue bean="${passPlayInstance}" field="yardsGained"/></dd>
 						
 					</g:if>
 				

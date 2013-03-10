@@ -44,13 +44,13 @@
 					<thead>
 						<tr>
 						
-							<th class="header"><g:message code="runPlay.ballCarrier.label" default="Ball Carrier" /></th>
+							<g:sortableColumn property="YAC" title="${message(code: 'runPlay.YAC.label', default: 'YAC')}" />
+						
+							<th class="header"><g:message code="runPlay.ballcarrier.label" default="Ballcarrier" /></th>
 						
 							<g:sortableColumn property="down" title="${message(code: 'runPlay.down.label', default: 'Down')}" />
 						
-							<g:sortableColumn property="driveNumber" title="${message(code: 'runPlay.driveNumber.label', default: 'Drive Number')}" />
-						
-							<g:sortableColumn property="gain" title="${message(code: 'runPlay.gain.label', default: 'Gain')}" />
+							<th class="header"><g:message code="runPlay.drive.label" default="Drive" /></th>
 						
 							<g:sortableColumn property="locaton" title="${message(code: 'runPlay.locaton.label', default: 'Locaton')}" />
 						
@@ -63,13 +63,13 @@
 					<g:each in="${runPlayInstanceList}" var="runPlayInstance">
 						<tr>
 						
-							<td>${fieldValue(bean: runPlayInstance, field: "ballCarrier")}</td>
+							<td>${fieldValue(bean: runPlayInstance, field: "YAC")}</td>
+						
+							<td>${fieldValue(bean: runPlayInstance, field: "ballcarrier")}</td>
 						
 							<td>${fieldValue(bean: runPlayInstance, field: "down")}</td>
 						
-							<td>${fieldValue(bean: runPlayInstance, field: "driveNumber")}</td>
-						
-							<td>${fieldValue(bean: runPlayInstance, field: "gain")}</td>
+							<td>${fieldValue(bean: runPlayInstance, field: "drive")}</td>
 						
 							<td>${fieldValue(bean: runPlayInstance, field: "locaton")}</td>
 						

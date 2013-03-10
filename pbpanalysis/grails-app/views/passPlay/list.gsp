@@ -46,7 +46,7 @@
 						
 							<g:sortableColumn property="down" title="${message(code: 'passPlay.down.label', default: 'Down')}" />
 						
-							<g:sortableColumn property="driveNumber" title="${message(code: 'passPlay.driveNumber.label', default: 'Drive Number')}" />
+							<th class="header"><g:message code="passPlay.drive.label" default="Drive" /></th>
 						
 							<g:sortableColumn property="location" title="${message(code: 'passPlay.location.label', default: 'Location')}" />
 						
@@ -65,7 +65,7 @@
 						
 							<td>${fieldValue(bean: passPlayInstance, field: "down")}</td>
 						
-							<td>${fieldValue(bean: passPlayInstance, field: "driveNumber")}</td>
+							<td>${fieldValue(bean: passPlayInstance, field: "drive")}</td>
 						
 							<td>${fieldValue(bean: passPlayInstance, field: "location")}</td>
 						

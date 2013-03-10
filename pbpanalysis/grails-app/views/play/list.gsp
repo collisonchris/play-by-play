@@ -46,15 +46,15 @@
 						
 							<g:sortableColumn property="down" title="${message(code: 'play.down.label', default: 'Down')}" />
 						
-							<g:sortableColumn property="driveNumber" title="${message(code: 'play.driveNumber.label', default: 'Drive Number')}" />
-						
-							<g:sortableColumn property="isPass" title="${message(code: 'play.isPass.label', default: 'Is Pass')}" />
-						
-							<g:sortableColumn property="isRun" title="${message(code: 'play.isRun.label', default: 'Is Run')}" />
+							<th class="header"><g:message code="play.drive.label" default="Drive" /></th>
 						
 							<g:sortableColumn property="notes" title="${message(code: 'play.notes.label', default: 'Notes')}" />
 						
 							<g:sortableColumn property="playNumber" title="${message(code: 'play.playNumber.label', default: 'Play Number')}" />
+						
+							<g:sortableColumn property="yardsGained" title="${message(code: 'play.yardsGained.label', default: 'Yards Gained')}" />
+						
+							<g:sortableColumn property="yardsToGo" title="${message(code: 'play.yardsToGo.label', default: 'Yards To Go')}" />
 						
 							<th></th>
 						</tr>
@@ -65,15 +65,15 @@
 						
 							<td>${fieldValue(bean: playInstance, field: "down")}</td>
 						
-							<td>${fieldValue(bean: playInstance, field: "driveNumber")}</td>
-						
-							<td><g:formatBoolean boolean="${playInstance.isPass}" /></td>
-						
-							<td><g:formatBoolean boolean="${playInstance.isRun}" /></td>
+							<td>${fieldValue(bean: playInstance, field: "drive")}</td>
 						
 							<td>${fieldValue(bean: playInstance, field: "notes")}</td>
 						
 							<td>${fieldValue(bean: playInstance, field: "playNumber")}</td>
+						
+							<td>${fieldValue(bean: playInstance, field: "yardsGained")}</td>
+						
+							<td>${fieldValue(bean: playInstance, field: "yardsToGo")}</td>
 						
 							<td class="link">
 								<g:link action="show" id="${playInstance.id}" class="btn btn-small">Show &raquo;</g:link>

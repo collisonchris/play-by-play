@@ -10,12 +10,12 @@
 	<g:textField name="down" value="${passPlayInstance?.down}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: passPlayInstance, field: 'driveNumber', 'error')} required">
-	<label for="driveNumber">
-		<g:message code="passPlay.driveNumber.label" default="Drive Number" />
+<div class="fieldcontain ${hasErrors(bean: passPlayInstance, field: 'drive', 'error')} required">
+	<label for="drive">
+		<g:message code="passPlay.drive.label" default="Drive" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="driveNumber" type="number" value="${passPlayInstance.driveNumber}" required=""/>
+	<g:select id="drive" name="drive.id" from="${com.nfldraftscience.domain.Drive.list()}" optionKey="id" required="" value="${passPlayInstance?.drive?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: passPlayInstance, field: 'location', 'error')} required">
@@ -58,14 +58,6 @@
 	<g:select name="route" from="${com.nfldraftscience.domain.Route?.values()}" keys="${com.nfldraftscience.domain.Route.values()*.name()}" required="" value="${passPlayInstance?.route?.name()}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: passPlayInstance, field: 'startingYardLine', 'error')} ">
-	<label for="startingYardLine">
-		<g:message code="passPlay.startingYardLine.label" default="Starting Yard Line" />
-		
-	</label>
-	<g:textField name="startingYardLine" value="${passPlayInstance?.startingYardLine}"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: passPlayInstance, field: 'target', 'error')} required">
 	<label for="target">
 		<g:message code="passPlay.target.label" default="Target" />
@@ -74,12 +66,12 @@
 	<g:select id="target" name="target.id" from="${com.nfldraftscience.domain.Player.list()}" optionKey="id" required="" value="${passPlayInstance?.target?.id}" class="many-to-one"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: passPlayInstance, field: 'yardsGain', 'error')} required">
-	<label for="yardsGain">
-		<g:message code="passPlay.yardsGain.label" default="Yards Gain" />
+<div class="fieldcontain ${hasErrors(bean: passPlayInstance, field: 'yardsGained', 'error')} required">
+	<label for="yardsGained">
+		<g:message code="passPlay.yardsGained.label" default="Yards Gained" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:field name="yardsGain" type="number" value="${passPlayInstance.yardsGain}" required=""/>
+	<g:field name="yardsGained" type="number" value="${passPlayInstance.yardsGained}" required=""/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: passPlayInstance, field: 'yardsTargeted', 'error')} required">
